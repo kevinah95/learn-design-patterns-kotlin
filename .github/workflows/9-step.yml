@@ -29,17 +29,17 @@ jobs:
             exit 0
           fi
 
-          if ! grep -Eq 'interface\\s+(Component|Componente)\\b' "$FILE"; then
-            echo "⏭️ Debe existir una interfaz `Component` o `Componente`."
+          if ! grep -Eq 'interface\s+(Component|Componente)\b' "$FILE"; then
+            echo "⏭️ Debe existir una interfaz \`Component\` o \`Componente\`."
             exit 0
           fi
 
-          if ! grep -Eq 'class\\s+[A-Za-z0-9_]*Decorator[A-Za-z0-9_]*|class\\s+Decorador' "$FILE"; then
+          if ! grep -Eq 'class\s+[A-Za-z0-9_]*Decorator[A-Za-z0-9_]*|class\s+Decorador' "$FILE"; then
             echo "⏭️ Debe existir una clase decoradora."
             exit 0
           fi
 
-          if ! grep -Eq 'private\\s+val\\s+[a-zA-Z0-9_]+:\\s*(Component|Componente)' "$FILE"; then
+          if ! grep -Eq 'private\s+val\s+[a-zA-Z0-9_]+:\s*(Component|Componente)' "$FILE"; then
             echo "⏭️ El decorador debe envolver a otro componente."
             exit 0
           fi

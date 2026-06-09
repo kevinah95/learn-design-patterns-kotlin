@@ -29,13 +29,13 @@ jobs:
             exit 0
           fi
 
-          if ! grep -Eq 'fun\\s+hasNext\\s*\\(' "$FILE"; then
-            echo "⏭️ Debe existir `hasNext()`."
+          if ! grep -Eq 'fun\s+hasNext\s*\(' "$FILE"; then
+            echo "⏭️ Debe existir \`hasNext()\`."
             exit 0
           fi
 
-          if ! grep -Eq 'fun\\s+next\\s*\\(' "$FILE"; then
-            echo "⏭️ Debe existir `next()`."
+          if ! grep -Eq 'fun\s+next\s*\(' "$FILE"; then
+            echo "⏭️ Debe existir \`next()\`."
             exit 0
           fi
 

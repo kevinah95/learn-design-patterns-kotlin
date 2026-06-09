@@ -29,13 +29,13 @@ jobs:
             exit 0
           fi
 
-          if ! grep -Eq 'class\\s+(Builder|Constructor)\\b' "$FILE"; then
-            echo "⏭️ Debe existir una clase `Builder` o `Constructor`."
+          if ! grep -Eq 'class\s+(Builder|Constructor)\b' "$FILE"; then
+            echo "⏭️ Debe existir una clase \`Builder\` o \`Constructor\`."
             exit 0
           fi
 
-          if ! grep -Eq 'fun\\s+build\\s*\\(' "$FILE"; then
-            echo "⏭️ Debe existir un método `build()` que devuelva el objeto final."
+          if ! grep -Eq 'fun\s+build\s*\(' "$FILE"; then
+            echo "⏭️ Debe existir un método \`build()\` que devuelva el objeto final."
             exit 0
           fi
 

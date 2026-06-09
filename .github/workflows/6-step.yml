@@ -29,17 +29,17 @@ jobs:
             exit 0
           fi
 
-          if ! grep -Eq 'interface\\s+(Target|Objetivo)\\b' "$FILE"; then
-            echo "⏭️ Debe existir una interfaz `Target` u `Objetivo`."
+          if ! grep -Eq 'interface\s+(Target|Objetivo)\b' "$FILE"; then
+            echo "⏭️ Debe existir una interfaz \`Target\` u \`Objetivo\`."
             exit 0
           fi
 
-          if ! grep -Eq 'class\\s+[A-Za-z0-9_]+\\s*:\\s*(Target|Objetivo)' "$FILE"; then
+          if ! grep -Eq 'class\s+[A-Za-z0-9_]+\s*:\s*(Target|Objetivo)' "$FILE"; then
             echo "⏭️ Debe existir una clase que implemente la interfaz objetivo."
             exit 0
           fi
 
-          if ! grep -Eq '(private\\s+val|ServicioPagoLegacy|Adaptado)' "$FILE"; then
+          if ! grep -Eq '(private\s+val|ServicioPagoLegacy|Adaptado)' "$FILE"; then
             echo "⏭️ El adaptador debe envolver otra clase por composición."
             exit 0
           fi

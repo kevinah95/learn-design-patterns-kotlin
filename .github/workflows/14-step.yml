@@ -29,13 +29,13 @@ jobs:
             exit 0
           fi
 
-          if ! grep -Eq 'interface\\s+(Command|Comando)\\b' "$FILE"; then
-            echo "⏭️ Debe existir una interfaz `Command` o `Comando`."
+          if ! grep -Eq 'interface\s+(Command|Comando)\b' "$FILE"; then
+            echo "⏭️ Debe existir una interfaz \`Command\` o \`Comando\`."
             exit 0
           fi
 
-          if ! grep -Eq 'fun\\s+execute\\s*\\(' "$FILE"; then
-            echo "⏭️ Debe existir un método `execute()`."
+          if ! grep -Eq 'fun\s+execute\s*\(' "$FILE"; then
+            echo "⏭️ Debe existir un método \`execute()\`."
             exit 0
           fi
 

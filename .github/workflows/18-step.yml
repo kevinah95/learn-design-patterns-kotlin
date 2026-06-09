@@ -29,13 +29,13 @@ jobs:
             exit 0
           fi
 
-          if ! grep -Eq 'interface\\s+(Observer|Observador)\\b' "$FILE"; then
-            echo "⏭️ Debe existir una interfaz `Observer` u `Observador`."
+          if ! grep -Eq 'interface\s+(Observer|Observador)\b' "$FILE"; then
+            echo "⏭️ Debe existir una interfaz \`Observer\` u \`Observador\`."
             exit 0
           fi
 
-          if ! grep -Eq 'fun\\s+(update|actualizar)\\s*\\(' "$FILE"; then
-            echo "⏭️ Debe existir `update(...)` o `actualizar(...)`."
+          if ! grep -Eq 'fun\s+(update|actualizar)\s*\(' "$FILE"; then
+            echo "⏭️ Debe existir \`update(...)\` o \`actualizar(...)\`."
             exit 0
           fi
 

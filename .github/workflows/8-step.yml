@@ -29,13 +29,13 @@ jobs:
             exit 0
           fi
 
-          if ! grep -Eq 'interface\\s+(Component|Componente)\\b' "$FILE"; then
-            echo "⏭️ Debe existir una interfaz `Component` o `Componente`."
+          if ! grep -Eq 'interface\s+(Component|Componente)\b' "$FILE"; then
+            echo "⏭️ Debe existir una interfaz \`Component\` o \`Componente\`."
             exit 0
           fi
 
-          if ! grep -Eq 'add\\s*\\(' "$FILE"; then
-            echo "⏭️ El compuesto debe exponer una operación `add(...)`."
+          if ! grep -Eq 'add\s*\(' "$FILE"; then
+            echo "⏭️ El compuesto debe exponer una operación \`add(...)\`."
             exit 0
           fi
 

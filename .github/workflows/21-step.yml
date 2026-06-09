@@ -29,18 +29,18 @@ jobs:
             exit 0
           fi
 
-          if ! grep -Eq 'abstract\\s+class' "$FILE"; then
+          if ! grep -Eq 'abstract\s+class' "$FILE"; then
             echo "⏭️ Debe existir una clase abstracta."
             exit 0
           fi
 
-          if ! grep -Eq 'abstract\\s+fun' "$FILE"; then
+          if ! grep -Eq 'abstract\s+fun' "$FILE"; then
             echo "⏭️ Debe existir al menos un método abstracto."
             exit 0
           fi
 
-          if ! grep -Eq 'fun\\s+(templateMethod|metodoPlantilla)\\s*\\(' "$FILE"; then
-            echo "⏭️ Debe existir `templateMethod(...)` o `metodoPlantilla(...)`."
+          if ! grep -Eq 'fun\s+(templateMethod|metodoPlantilla)\s*\(' "$FILE"; then
+            echo "⏭️ Debe existir \`templateMethod(...)\` o \`metodoPlantilla(...)\`."
             exit 0
           fi
 

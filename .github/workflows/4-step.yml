@@ -29,13 +29,13 @@ jobs:
             exit 0
           fi
 
-          if ! grep -Eq 'interface\\s+(Prototype|Prototipo)\\b' "$FILE"; then
-            echo "⏭️ Debe existir una interfaz `Prototype` o `Prototipo`."
+          if ! grep -Eq 'interface\s+(Prototype|Prototipo)\b' "$FILE"; then
+            echo "⏭️ Debe existir una interfaz \`Prototype\` o \`Prototipo\`."
             exit 0
           fi
 
-          if ! grep -Eq '(fun\\s+clone\\s*\\(|\\bcopy\\s*\\()' "$FILE"; then
-            echo "⏭️ Debes implementar `clone()` o usar `copy()` como mecanismo de clonación."
+          if ! grep -Eq '(fun\s+clone\s*\(|\bcopy\s*\()' "$FILE"; then
+            echo "⏭️ Debes implementar \`clone()\` o usar \`copy()\` como mecanismo de clonación."
             exit 0
           fi
 

@@ -29,13 +29,13 @@ jobs:
             exit 0
           fi
 
-          if ! grep -Eq 'interface\\s+(Visitor|Visitante)\\b' "$FILE"; then
-            echo "⏭️ Debe existir una interfaz `Visitor` o `Visitante`."
+          if ! grep -Eq 'interface\s+(Visitor|Visitante)\b' "$FILE"; then
+            echo "⏭️ Debe existir una interfaz \`Visitor\` o \`Visitante\`."
             exit 0
           fi
 
-          if ! grep -Eq 'fun\\s+(visit|visitar)\\s*\\(' "$FILE"; then
-            echo "⏭️ Debe existir `visit(...)` o `visitar(...)`."
+          if ! grep -Eq 'fun\s+(visit|visitar)\s*\(' "$FILE"; then
+            echo "⏭️ Debe existir \`visit(...)\` o \`visitar(...)\`."
             exit 0
           fi
 
