@@ -17,6 +17,27 @@ Colega D ─┘        │
            └─ coordina interacciones
 ```
 
+```mermaid
+classDiagram
+    class Mediador {
+        <<interface>>
+        +notificar(origen String, evento String)
+    }
+    class MediadorConcreto {
+        +notificar(origen String, evento String)
+    }
+    class Colega {
+        #mediador: Mediador
+    }
+    class ComponenteA
+    class ComponenteB
+    Mediador <|.. MediadorConcreto
+    Colega <|-- ComponenteA
+    Colega <|-- ComponenteB
+    MediadorConcreto --> ComponenteA
+    MediadorConcreto --> ComponenteB
+```
+
 ## El esqueleto actual 🧩
 
 Abre el archivo `src/main/kotlin/patterns/behavioral/Mediator.kt`. Encontrarás algo parecido a esto:

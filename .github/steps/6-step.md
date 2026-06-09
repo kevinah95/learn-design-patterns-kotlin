@@ -18,6 +18,23 @@ Cliente ──► Target
       traduce llamadas
 ```
 
+```mermaid
+classDiagram
+    class Target {
+        <<interface>>
+        +request() String
+    }
+    class Adaptee {
+        +specificRequest() String
+    }
+    class Adapter {
+        -adaptee: Adaptee
+        +request() String
+    }
+    Target <|.. Adapter
+    Adapter --> Adaptee
+```
+
 ## El esqueleto actual 🧩
 
 Abre el archivo `src/main/kotlin/patterns/structural/Adapter.kt`. Encontrarás algo parecido a esto:

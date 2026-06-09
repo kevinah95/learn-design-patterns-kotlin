@@ -17,6 +17,28 @@ Context ──► Strategy.execute(...)
 EstrategiaA  EstrategiaB
 ```
 
+```mermaid
+classDiagram
+    class Estrategia {
+        <<interface>>
+        +ejecutar(datos String) String
+    }
+    class EstrategiaA {
+        +ejecutar(datos String) String
+    }
+    class EstrategiaB {
+        +ejecutar(datos String) String
+    }
+    class Contexto {
+        -estrategia: Estrategia
+        +setEstrategia(e Estrategia)
+        +ejecutar() String
+    }
+    Estrategia <|.. EstrategiaA
+    Estrategia <|.. EstrategiaB
+    Contexto --> Estrategia
+```
+
 ## El esqueleto actual 🧩
 
 Abre el archivo `src/main/kotlin/patterns/behavioral/Strategy.kt`. Encontrarás algo parecido a esto:

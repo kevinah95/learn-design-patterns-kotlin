@@ -20,6 +20,34 @@ Element ──► accept(visitor)
      └─────────────┘ doble despacho
 ```
 
+```mermaid
+classDiagram
+    class Visitador {
+        <<interface>>
+        +visitar(e ElementoA)
+        +visitar(e ElementoB)
+    }
+    class Elemento {
+        <<interface>>
+        +aceptar(v Visitador)
+    }
+    class ElementoA {
+        +aceptar(v Visitador)
+    }
+    class ElementoB {
+        +aceptar(v Visitador)
+    }
+    class VisitadorConcreto {
+        +visitar(e ElementoA)
+        +visitar(e ElementoB)
+    }
+    Elemento <|.. ElementoA
+    Elemento <|.. ElementoB
+    Visitador <|.. VisitadorConcreto
+    ElementoA ..> Visitador
+    ElementoB ..> Visitador
+```
+
 ## El esqueleto actual 🧩
 
 Abre el archivo `src/main/kotlin/patterns/behavioral/Visitor.kt`. Encontrarás algo parecido a esto:

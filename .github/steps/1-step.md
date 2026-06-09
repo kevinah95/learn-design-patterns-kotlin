@@ -21,6 +21,29 @@ CreadorConcreto ───────► ProductoConcreto
 Cliente ──► Creador abstracto ──► Producto
 ```
 
+```mermaid
+classDiagram
+    class Creador {
+        <<abstract>>
+        +operacion() String
+        #crearProducto()* Producto
+    }
+    class Producto {
+        <<interface>>
+        +descripcion() String
+    }
+    class CreadorConcreto {
+        #crearProducto() Producto
+    }
+    class ProductoConcreto {
+        +descripcion() String
+    }
+    Creador <|-- CreadorConcreto
+    Producto <|.. ProductoConcreto
+    Creador ..> Producto
+    CreadorConcreto ..> ProductoConcreto
+```
+
 ## El esqueleto actual 🧩
 
 Abre el archivo `src/main/kotlin/patterns/creational/FactoryMethod.kt`. Encontrarás algo parecido a esto:

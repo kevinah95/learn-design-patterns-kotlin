@@ -18,6 +18,26 @@ Originator ──► createMemento() ──► Memento
 Caretaker guarda el historial
 ```
 
+```mermaid
+classDiagram
+    class Originador {
+        -estado: String
+        +crearMemento() Memento
+        +restaurar(m Memento)
+    }
+    class Memento {
+        -estadoGuardado: String
+        +obtenerEstado() String
+    }
+    class Cuidador {
+        -historial: List~Memento~
+        +guardar(m Memento)
+        +deshacer() Memento
+    }
+    Originador ..> Memento : crea
+    Cuidador o--> Memento : almacena
+```
+
 ## El esqueleto actual 🧩
 
 Abre el archivo `src/main/kotlin/patterns/behavioral/Memento.kt`. Encontrarás algo parecido a esto:

@@ -19,6 +19,31 @@ Aggregate ──► createIterator()
      └─ next()
 ```
 
+```mermaid
+classDiagram
+    class Iterador {
+        <<interface>>
+        +hasNext() Boolean
+        +next() T
+    }
+    class Coleccion {
+        <<interface>>
+        +crearIterador() Iterador
+    }
+    class ColeccionConcreta {
+        -elementos: List~T~
+        +crearIterador() Iterador
+    }
+    class IteradorConcreto {
+        -indice: Int
+        +hasNext() Boolean
+        +next() T
+    }
+    Coleccion <|.. ColeccionConcreta
+    Iterador <|.. IteradorConcreto
+    ColeccionConcreta ..> IteradorConcreto
+```
+
 ## El esqueleto actual 🧩
 
 Abre el archivo `src/main/kotlin/patterns/behavioral/Iterator.kt`. Encontrarás algo parecido a esto:

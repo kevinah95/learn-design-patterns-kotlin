@@ -17,6 +17,14 @@ Context ──► State.handle(context)
       EstadoA   EstadoB
 ```
 
+```mermaid
+stateDiagram-v2
+    [*] --> EstadoA
+    EstadoA --> EstadoB : transicion()
+    EstadoB --> EstadoC : transicion()
+    EstadoC --> EstadoA : transicion()
+```
+
 ## El esqueleto actual 🧩
 
 Abre el archivo `src/main/kotlin/patterns/behavioral/State.kt`. Encontrarás algo parecido a esto:

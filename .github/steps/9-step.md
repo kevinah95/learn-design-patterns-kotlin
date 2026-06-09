@@ -19,6 +19,28 @@ ConcreteComponent             ▲
                ConcreteDecorator
 ```
 
+```mermaid
+classDiagram
+    class Componente {
+        <<interface>>
+        +operacion() String
+    }
+    class ComponenteConcreto {
+        +operacion() String
+    }
+    class Decorador {
+        -envuelto: Componente
+        +operacion() String
+    }
+    class DecoradorConcreto {
+        +operacion() String
+    }
+    Componente <|.. ComponenteConcreto
+    Componente <|.. Decorador
+    Decorador o--> Componente
+    Decorador <|-- DecoradorConcreto
+```
+
 ## El esqueleto actual 🧩
 
 Abre el archivo `src/main/kotlin/patterns/structural/Decorator.kt`. Encontrarás algo parecido a esto:

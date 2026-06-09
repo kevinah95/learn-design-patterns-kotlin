@@ -20,6 +20,20 @@ AbstractClass
    ConcreteClass
 ```
 
+```mermaid
+classDiagram
+    class ClaseAbstracta {
+        <<abstract>>
+        +metodoPlantilla()
+        +pasoComun()
+        #pasoAbstracto()*
+    }
+    class ClaseConcreta {
+        #pasoAbstracto()
+    }
+    ClaseAbstracta <|-- ClaseConcreta
+```
+
 ## El esqueleto actual 🧩
 
 Abre el archivo `src/main/kotlin/patterns/behavioral/TemplateMethod.kt`. Encontrarás algo parecido a esto:

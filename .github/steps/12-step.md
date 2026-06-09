@@ -19,6 +19,24 @@ Cliente ──► Subject
      └─ controla el acceso al objeto real
 ```
 
+```mermaid
+classDiagram
+    class Sujeto {
+        <<interface>>
+        +request() String
+    }
+    class SujetoReal {
+        +request() String
+    }
+    class Proxy {
+        -real: SujetoReal
+        +request() String
+    }
+    Sujeto <|.. SujetoReal
+    Sujeto <|.. Proxy
+    Proxy --> SujetoReal
+```
+
 ## El esqueleto actual 🧩
 
 Abre el archivo `src/main/kotlin/patterns/structural/Proxy.kt`. Encontrarás algo parecido a esto:

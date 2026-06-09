@@ -19,6 +19,25 @@ Component
    Leaf      Composite ──► [Component, Component, ...]
 ```
 
+```mermaid
+classDiagram
+    class Componente {
+        <<interface>>
+        +operacion() String
+    }
+    class Hoja {
+        +operacion() String
+    }
+    class Compuesto {
+        -hijos: List~Componente~
+        +agregar(c Componente)
+        +operacion() String
+    }
+    Componente <|.. Hoja
+    Componente <|.. Compuesto
+    Compuesto o--> Componente
+```
+
 ## El esqueleto actual 🧩
 
 Abre el archivo `src/main/kotlin/patterns/structural/Composite.kt`. Encontrarás algo parecido a esto:

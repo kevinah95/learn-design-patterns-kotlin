@@ -20,6 +20,20 @@ PrototipoConcreto ──► copia ajustada
 Cliente ──► prototipo existente ──► clon
 ```
 
+```mermaid
+classDiagram
+    class Prototipo {
+        <<interface>>
+        +clone() Prototipo
+    }
+    class PrototipoConcreto {
+        -estado: String
+        +clone() Prototipo
+    }
+    Prototipo <|.. PrototipoConcreto
+    PrototipoConcreto ..> PrototipoConcreto : crea copia
+```
+
 ## El esqueleto actual 🧩
 
 Abre el archivo `src/main/kotlin/patterns/creational/Prototype.kt`. Encontrarás algo parecido a esto:

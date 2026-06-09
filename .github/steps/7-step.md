@@ -19,6 +19,27 @@ RefinedAbstraction     ConcreteImplementation
    Dos jerarquías separadas conectadas por composición
 ```
 
+```mermaid
+classDiagram
+    class Abstraccion {
+        #impl: Implementacion
+        +operacion() String
+    }
+    class AbstraccionRefinada {
+        +operacion() String
+    }
+    class Implementacion {
+        <<interface>>
+        +implementar() String
+    }
+    class ImplementacionConcreta {
+        +implementar() String
+    }
+    Abstraccion <|-- AbstraccionRefinada
+    Abstraccion o--> Implementacion
+    Implementacion <|.. ImplementacionConcreta
+```
+
 ## El esqueleto actual 🧩
 
 Abre el archivo `src/main/kotlin/patterns/structural/Bridge.kt`. Encontrarás algo parecido a esto:

@@ -16,6 +16,16 @@ Cliente ──► Handler1 ──► Handler2 ──► Handler3
       └ atiende    └ delega     └ atiende o rechaza
 ```
 
+```mermaid
+flowchart LR
+    Cliente -->|solicitud| H1[Handler 1]
+    H1 -->|delega| H2[Handler 2]
+    H2 -->|delega| H3[Handler 3]
+    H1 -->|atiende| R1((ok))
+    H2 -->|atiende| R2((ok))
+    H3 -->|atiende o rechaza| R3((ok/x))
+```
+
 ## El esqueleto actual 🧩
 
 Abre el archivo `src/main/kotlin/patterns/behavioral/ChainOfResponsibility.kt`. Encontrarás algo parecido a esto:

@@ -20,6 +20,24 @@ Subject
      Observer.update(...)
 ```
 
+```mermaid
+classDiagram
+    class Sujeto {
+        +suscribir(o Observador)
+        +desuscribir(o Observador)
+        +notificar()
+    }
+    class Observador {
+        <<interface>>
+        +actualizar(datos String)
+    }
+    class ObservadorConcreto {
+        +actualizar(datos String)
+    }
+    Sujeto --> Observador : notifica a todos
+    Observador <|.. ObservadorConcreto
+```
+
 ## El esqueleto actual 🧩
 
 Abre el archivo `src/main/kotlin/patterns/behavioral/Observer.kt`. Encontrarás algo parecido a esto:

@@ -20,6 +20,16 @@ Cliente B ─┼──► misma instancia
 Cliente C ─┘
 ```
 
+```mermaid
+classDiagram
+    class Singleton {
+        -instancia$ Singleton
+        +getInstance()$ Singleton
+        +operacion() String
+    }
+    Singleton --> Singleton : retorna misma instancia
+```
+
 ## El esqueleto actual 🧩
 
 Abre el archivo `src/main/kotlin/patterns/creational/Singleton.kt`. Encontrarás algo parecido a esto:

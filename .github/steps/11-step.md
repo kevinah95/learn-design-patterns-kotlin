@@ -17,6 +17,19 @@ Cliente ──► FlyweightFactory ──► cache[clave] = Flyweight
 estado intrínseco compartido + estado extrínseco enviado por el cliente
 ```
 
+```mermaid
+classDiagram
+    class Flyweight {
+        -estadoIntrínseco: String
+        +operacion(estadoExtrínseco String)
+    }
+    class FlyweightFactory {
+        -cache: Map~String,Flyweight~
+        +obtener(clave String) Flyweight
+    }
+    FlyweightFactory --> Flyweight : crea o reutiliza
+```
+
 ## El esqueleto actual 🧩
 
 Abre el archivo `src/main/kotlin/patterns/structural/Flyweight.kt`. Encontrarás algo parecido a esto:

@@ -21,6 +21,24 @@ FabricaConcreta ──► ProductoAConcreto / ProductoBConcreto
 Cliente ──► AbstractFactory ──► familia de productos compatibles
 ```
 
+```mermaid
+classDiagram
+    class FabricaAbstracta {
+        <<interface>>
+        +crearProductoA() ProductoA
+        +crearProductoB() ProductoB
+    }
+    class FabricaConcreta {
+        +crearProductoA() ProductoA
+        +crearProductoB() ProductoB
+    }
+    class ProductoA { <<interface>> }
+    class ProductoB { <<interface>> }
+    FabricaAbstracta <|.. FabricaConcreta
+    FabricaAbstracta ..> ProductoA
+    FabricaAbstracta ..> ProductoB
+```
+
 ## El esqueleto actual 🧩
 
 Abre el archivo `src/main/kotlin/patterns/creational/AbstractFactory.kt`. Encontrarás algo parecido a esto:

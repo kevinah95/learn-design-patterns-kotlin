@@ -16,6 +16,25 @@ Cliente ──► Facade ──► Subsistema A
           └─► Subsistema C
 ```
 
+```mermaid
+classDiagram
+    class Facade {
+        +operacionSimple() String
+    }
+    class SubsistemaA {
+        +operacionA() String
+    }
+    class SubsistemaB {
+        +operacionB() String
+    }
+    class SubsistemaC {
+        +operacionC() String
+    }
+    Facade --> SubsistemaA
+    Facade --> SubsistemaB
+    Facade --> SubsistemaC
+```
+
 ## El esqueleto actual 🧩
 
 Abre el archivo `src/main/kotlin/patterns/structural/Facade.kt`. Encontrarás algo parecido a esto:

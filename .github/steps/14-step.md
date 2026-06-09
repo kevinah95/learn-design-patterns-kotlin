@@ -17,6 +17,30 @@ Invoker ──► Command
       ConcreteCommand ──► Receiver
 ```
 
+```mermaid
+classDiagram
+    class Comando {
+        <<interface>>
+        +execute()
+        +undo()
+    }
+    class ComandoConcreto {
+        -receptor: Receptor
+        +execute()
+        +undo()
+    }
+    class Invocador {
+        -comando: Comando
+        +ejecutar()
+    }
+    class Receptor {
+        +accion() String
+    }
+    Comando <|.. ComandoConcreto
+    ComandoConcreto --> Receptor
+    Invocador --> Comando
+```
+
 ## El esqueleto actual 🧩
 
 Abre el archivo `src/main/kotlin/patterns/behavioral/Command.kt`. Encontrarás algo parecido a esto:

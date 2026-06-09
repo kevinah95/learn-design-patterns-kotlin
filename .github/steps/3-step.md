@@ -20,6 +20,28 @@ Director ──► Builder
             Producto
 ```
 
+```mermaid
+classDiagram
+    class Builder {
+        <<interface>>
+        +setParteA()
+        +setParteB()
+        +build() Producto
+    }
+    class BuilderConcreto {
+        +setParteA()
+        +setParteB()
+        +build() Producto
+    }
+    class Director {
+        +construir(builder Builder)
+    }
+    class Producto
+    Director --> Builder
+    Builder <|.. BuilderConcreto
+    BuilderConcreto ..> Producto
+```
+
 ## El esqueleto actual 🧩
 
 Abre el archivo `src/main/kotlin/patterns/creational/Builder.kt`. Encontrarás algo parecido a esto:
